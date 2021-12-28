@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="title">두잇! 리액트 시작하기</h1>
+      // 아래는 JSX 양식입니다.
+      <div>
+        <img src="http://www.easypub.co.kr/images/logo_footer.png" />
+        <div>안녕하세요</div>
       </div>
     );
   }
