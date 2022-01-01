@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import ChildProperty from './03/ChildProperty';
+import ForceUpdateExample from './03/ForceUpdateExample';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <ChildProperty>
-          <div>
-            <span>자식 노드</span>
-          </div>
-        </ChildProperty>
+        <ForceUpdateExample />
       </div>
     );
   }
