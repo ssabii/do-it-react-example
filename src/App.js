@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import TodaysPlan from './03/TodaysPlan';
+import ChildProperty from './03/ChildProperty';
 
 class App extends Component {
   render() {
     return (
-      // 아래는 JSX 양식입니다.
-      <div className="body">
-        <TodaysPlan />
+      <div>
+        <ChildProperty>
+          <div>
+            <span>자식 노드</span>
+          </div>
+        </ChildProperty>
       </div>
     );
   }
