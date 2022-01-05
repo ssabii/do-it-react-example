@@ -33,10 +33,14 @@ Text.propTypes = {
   primary: PropTypes.bool,
 };
 
-export default withStyles(({ color, size }) => ({
+export default withStyles(({ color, size, responsive }) => ({
   default: {
     color: color.default,
     fontSize: size.md,
+    [responsive.small]: {
+      textAlign: 'center',
+      width: '100%',
+    },
   },
   xlarge: {
     fontSize: size.xg,

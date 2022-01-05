@@ -58,7 +58,7 @@ Input.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
-  autoFocus: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 Input.defaultProps = {
