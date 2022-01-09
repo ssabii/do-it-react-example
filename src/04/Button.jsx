@@ -28,6 +28,7 @@ class Button extends PureComponent {
           primary && styles.primary,
         )}
         onClick={onPress}
+        disabled={disabled}
       >
         {children}
       </button>
