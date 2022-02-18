@@ -51,7 +51,6 @@ Button.propTypes = {
   type: PropTypes.string,
   onPress: PropTypes.func,
 };
-
 Button.defaultProps = {
   onPress: () => {},
   xsmall: false,
@@ -69,6 +68,7 @@ export default withStyles(({ color, size, unit, depth, fontWeight }) => ({
     borderStyle: 'solid',
     borderColor: color.default,
     borderRadius: unit,
+    color: color.default,
     fontSize: size.md,
     fontWeight: fontWeight.bold,
     padding: unit * 2,
@@ -82,43 +82,43 @@ export default withStyles(({ color, size, unit, depth, fontWeight }) => ({
     ':focus': {
       boxShadow: '0 0 0px 2px rgba(0, 0, 0, 0.3)',
     },
-    xlarge: {
-      fontSize: size.xg,
-      padding: unit * 2.5,
+  },
+  xlarge: {
+    fontSize: size.xg,
+    padding: unit * 2.5,
+  },
+  large: {
+    fontSize: size.lg,
+    padding: unit * 2.5,
+  },
+  small: {
+    fontSize: size.sm,
+    padding: unit * 1.5,
+  },
+  xsmall: {
+    fontSize: size.xs,
+    padding: unit,
+  },
+  primary: {
+    borderColor: color.primary,
+    color: color.white,
+    backgroundColor: color.primary,
+    ':hover': {
+      backgroundColor: color.primaryDark,
     },
-    large: {
-      fontSize: size.lg,
-      padding: unit * 2.5,
-    },
-    small: {
-      fontSize: size.sm,
-      padding: unit * 1.5,
-    },
-    xsmall: {
-      fontSize: size.xs,
-      padding: unit,
-    },
-    primary: {
-      borderColor: color.primary,
-      color: color.white,
-      backgroundColor: color.primary,
-      ':hover': {
-        backgroundColor: color.primaryDark,
-      },
-    },
-    secondary: {
-      borderColor: color.secondary,
-      color: color.secondary,
-    },
-    disabled: {
-      borderColor: color.grayDark,
-      color: color.grayLight,
-      cursor: 'default',
-      opacity: 0.5,
+  },
+  secondary: {
+    borderColor: color.secondary,
+    color: color.secondary,
+  },
+  disabled: {
+    borderColor: color.grayDark,
+    color: color.grayLight,
+    cursor: 'default',
+    opacity: 0.5,
+    backgroundColor: color.gray,
+    ':hover': {
       backgroundColor: color.gray,
-      ':hover': {
-        backgroundColor: color.gray,
-      },
     },
   },
 }))(Button);

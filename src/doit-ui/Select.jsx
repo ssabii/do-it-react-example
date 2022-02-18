@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles, css, withStylesPropTypes } from './withStyles';
 import Option from './Option';
 
+export { Option };
+
 class Select extends PureComponent {
   constructor(props) {
     super(props);
