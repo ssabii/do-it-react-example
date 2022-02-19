@@ -5,8 +5,8 @@ const { Provider, Consumer } = React.createContext({});
 
 class FormProvider extends React.PureComponent {
   static Consumer = Consumer;
-  static getDerivedStateFromProps({ initvalues: initValues }, prevState) {
-    const values = initValues !== prevState.initvalues ? initValues : prevState.values;
+  static getDerivedStateFromProps({ initValues }, prevState) {
+    const values = initValues !== prevState.initValues ? initValues : prevState.values;
 
     return {
       initValues,
@@ -33,13 +33,15 @@ class FormProvider extends React.PureComponent {
   }
 
   onChange(name, updatedValue) {
-    this.validate(this.state.values);
-    this.setState(({ values }) => ({
-      values: {
-        ...values,
-        [name]: updatedValue,
-      },
-    }));
+    this.setState(
+      ({ values }) => ({
+        values: {
+          ...values,
+          [name]: updatedValue,
+        },
+      }),
+      () => this.validate(this.state.values),
+    );
   }
 
   reset() {
@@ -60,7 +62,14 @@ class FormProvider extends React.PureComponent {
   render() {
     const { values, errors } = this.state;
     return (
-      <Provider value={{ errors, values, onChange: this.onChange, reset: this.reset }}>
+      <Provider
+        value={{
+          errors,
+          values,
+          onChange: this.onChange,
+          reset: this.reset,
+        }}
+      >
         <form onSubmit={this.handleSubmit}>{this.props.children}</form>
       </Provider>
     );
@@ -72,7 +81,7 @@ FormProvider.propTypes = {
 };
 
 FormProvider.defaultProps = {
-  inivalues: {},
+  initValues: {},
   validate: () => ({}),
 };
 

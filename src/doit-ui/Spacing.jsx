@@ -19,7 +19,6 @@ class Spacing extends PureComponent {
     const computedBottom = bottom ? bottom : vertical;
     const computedLeft = left ? left : horizontal;
     const computedRight = right ? right : horizontal;
-    console.log(computedTop, computedRight, computedBottom, computedLeft);
 
     const computedStyles = {
       flex: 1, // 크기를 일정한 비율로 늘리는 데 도움을 줍니다.
