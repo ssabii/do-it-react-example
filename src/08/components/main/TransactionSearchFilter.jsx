@@ -17,7 +17,7 @@ class TransactionSearchFilter extends PureComponent {
               <Text xlarge bold>
                 검색
               </Text>
-              <Select name="code" onChange={onChange} values={values['code']}>
+              <Select label="코인 코드" name="code" onChange={onChange}>
                 <Option label="선택해주세요" />
                 <Option label="비트코인(BTX)" value="BTX" />
                 <Option label="이더리움(ETH)" value="ETH" />
@@ -27,13 +27,13 @@ class TransactionSearchFilter extends PureComponent {
                 name="minAmount"
                 label="최소 거래가"
                 onChange={onChange}
-                value={values['minAmount']}
+                // value={values['minAmount']}
               />
               <Input
                 name="maxAmount"
                 label="최대 거래가"
                 onChange={onChange}
-                value={values['maxAmount']}
+                // value={values['maxAmount']}
               />
               <Button type="submit" primary>
                 검색

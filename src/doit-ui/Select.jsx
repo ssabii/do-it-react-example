@@ -59,8 +59,10 @@ class Select extends PureComponent {
     const { focused } = this.state;
 
     return (
-      <fieldset>
-        <label htmlFor={`input_${name}`}>{errorMessage || label}</label>
+      <fieldset {...css(styles.wrapper)}>
+        <label htmlFor={`input_${name}`} {...css(styles.label, errorMessage && styles.errorLabel)}>
+          {errorMessage || label}
+        </label>
         <div
           {...css(
             styles.placeholder,

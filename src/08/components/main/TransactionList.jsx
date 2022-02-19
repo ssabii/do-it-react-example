@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Api from '../../Api';
 
 import Heading from '../../../doit-ui/Heading';
 import Card from '../../../doit-ui/Card';
@@ -7,16 +8,14 @@ import TransactionTable from './TransactionTable';
 
 class TransactionList extends PureComponent {
   state = {
-    transactions: [
-      {
-        id: 'btx_01',
-        name: '비트코인(BTX)',
-        totalPrice: '123,123,000,000원',
-        currentPrice: '4,200,000원',
-        datetime: '2019/01/20 08:23:22',
-      },
-    ],
+    transactions: [],
   };
+
+  componentDidMount() {
+    Api.get('http://localhost:4000/transactions', { params: { code: 'BTX' } }).then((response) =>
+      this.setState({ transactions: response.data }),
+    );
+  }
 
   render() {
     const { transactions } = this.state;
