@@ -6,7 +6,6 @@ import { css, withStyles } from '../withStyles';
 class Modal extends PureComponent {
   render() {
     const { styles, children } = this.props;
-
     return (
       <div {...css(styles.overlay)}>
         <div {...css(styles.wrapper)}>
@@ -42,4 +41,4 @@ export default withStyles(() => ({
     margin: '40px auto 0px',
     width: 700,
   },
-}));
+}))(Modal);
