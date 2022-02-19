@@ -7,18 +7,12 @@ import TransactionSearchFilter from './TransactionSearchFilter';
 import TransactionTable from './TransactionTable';
 
 class TransactionList extends PureComponent {
-  state = {
-    transactions: [],
-  };
-
   componentDidMount() {
-    Api.get('http://localhost:4000/transactions', { params: { code: 'BTX' } }).then((response) =>
-      this.setState({ transactions: response.data }),
-    );
+    Api.get('/transactions').then(({ data }) => this.props.setTransactionList(data));
   }
 
   render() {
-    const { transactions } = this.state;
+    const { transactions } = this.props;
 
     return (
       <div>
@@ -33,5 +27,10 @@ class TransactionList extends PureComponent {
     );
   }
 }
+
+TransactionList.defaultProps = {
+  transactions: [],
+  setTransactionList: () => {},
+};
 
 export default TransactionList;
