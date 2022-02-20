@@ -8,7 +8,7 @@ import TransactionSearchFilterContainer from '../../containers/main/TransactionS
 
 class TransactionList extends PureComponent {
   componentDidMount() {
-    Api.get('/transactions').then(({ data }) => this.props.setTransactionList(data));
+    this.props.requestTransactionList();
   }
 
   render() {
@@ -30,7 +30,7 @@ class TransactionList extends PureComponent {
 
 TransactionList.defaultProps = {
   transactions: [],
-  setTransactionList: () => {},
+  requestTransactionList: () => {},
 };
 
 export default TransactionList;
