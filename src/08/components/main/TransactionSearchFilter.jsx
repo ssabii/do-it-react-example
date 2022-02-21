@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Api from '../../Api';
 
 import InlineList from '../../../doit-ui/InlineList';
 import Button from '../../../doit-ui/Button';

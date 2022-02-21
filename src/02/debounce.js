@@ -8,9 +8,3 @@ export function debounce(func, delay) {
     inDebounce = setTimeout(() => func(...args), delay);
   };
 }
-
-const run = debounce((val) => console.log(val), 100);
-console.log(run);
-run('a');
-run('b');
-run('2');

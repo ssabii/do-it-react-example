@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, css, withStylesPropTypes } from './withStyles';
 import Spacing from './Spacing';
-import Text from './Text';
 
 class Toast extends PureComponent {
   render() {
