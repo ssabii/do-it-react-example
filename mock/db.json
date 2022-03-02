@@ -33,6 +33,18 @@
       "amount": "12313",
       "name": "두잇코인",
       "id": "4VyxQFR"
+    },
+    {
+      "currentPrice": "4,216,000원",
+      "amount": "1",
+      "name": "비트코인",
+      "id": "26t9qEW"
+    },
+    {
+      "currentPrice": "216,000원",
+      "amount": "22",
+      "name": "이더리움",
+      "id": "n25o_aX"
     }
   ]
 }
