@@ -1,4 +1,3 @@
-import Api from '../Api';
 import createActions from '../../11/api-redux-pack/createActions';
 
 export const FETCH_TRANSACTION_LIST = 'transaction/FETCH_TRANSACTION_LIST';
